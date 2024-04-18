@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Project;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +14,16 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $newProject = new Project();
+        $newProject->title = "Prova";
+        $newProject->description = "progetto prova";
+        $newProject->img = "";
+        $newProject->tech = "laravel";
+        $newProject->github_url = "";
+        $newProject->devices = "";
+
+
+        // una volta che compiliamo i campi dobbiamo salvare la riga per applicare le modifiche
+        $newProject->save();
     }
 }
