@@ -23,7 +23,6 @@ class ProjectSeeder extends Seeder
         $newProject->devices = "";
 
 
-        // una volta che compiliamo i campi dobbiamo salvare la riga per applicare le modifiche
         $newProject->save();
     }
 }
