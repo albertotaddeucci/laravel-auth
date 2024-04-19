@@ -11,7 +11,7 @@ class StoreProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,32 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|max:100',
+            'description' => 'nullable|max:500',
+            'img' => 'nullable|max:300',
+            'tech' => 'required|max:100',
+            'github_url' => 'nullable|max:300',
+            'devices' => 'nullable|max:100',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'title.required' => "Devi inserire un titolo",
+            'title.max' => 'Deve avere un massimo di :max caratteri',
+
+            'description.max' => 'Deve avere un massimo di :max caratteri',
+
+            'img.max' => 'Deve avere un massimo di :max caratteri',
+
+            'tech.required' => 'Devi inserire le tecnologie utilizzate',
+            'tech.max' => 'Deve avere un massimo di :max caratteri',
+
+            'github_url.max' => 'Deve avere un massimo di :max caratteri',
+
+            'devices.max' => 'Deve avere un massimo di :max caratteri',
+
         ];
     }
 }

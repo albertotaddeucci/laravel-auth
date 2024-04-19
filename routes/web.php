@@ -40,7 +40,7 @@ Route::middleware(['auth', 'verified'])
         function () {
             //inserire qui tutte le rotte "da amministratore"
 
-            Route::get('/', [DashboardController::class, 'index'])->name('index');
+            Route::get('/', [DashboardController::class, 'home'])->name('home');
             Route::resource('/projects', ProjectController::class);
         }
     );

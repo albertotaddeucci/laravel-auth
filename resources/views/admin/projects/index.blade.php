@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container py-5">
-
-
     <ul class="list-group">
         @foreach ($projects as $project)  
         <li class="list-group-item">
