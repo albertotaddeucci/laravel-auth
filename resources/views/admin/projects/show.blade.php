@@ -4,12 +4,9 @@
 
 <div class="container py-5">
     
-    <div class="row align-items-center">
-        <div class="col text-center">
-            <img src="{{$project->thumb}}" class="img-fluid" style="width: 200px" alt="">
-        </div>
-        <div class="col text-center">
-            <h2>{{$project->title}}</h2>
+    <div class="row align-items-center rounded-3 " style="background-image: url('{{$project->img}}') ">
+        <div class="col text-center bg-dark bg-gradient bg-opacity-25 py-5 rounded-2 ">
+            <h2 class="text-white">{{$project->title}}</h2>
 
         </div>
     </div>
@@ -18,6 +15,7 @@
     <div class="row justify-content-center py-5">
         <div class="col-6">
             <p>{{$project->description}}</p>
+            
         </div>
         <div class="col-6 text-center">
             
@@ -30,7 +28,7 @@
     </div>
 
 
-
+    {{-- modal --}}
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">

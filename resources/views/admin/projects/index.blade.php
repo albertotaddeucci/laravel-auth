@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="container py-5">
-    <ul class="list-group">
+    <h1>Lista dei progetti</h1>
+    <ul class="pt-4 list-group list-group-flush">
         @foreach ($projects as $project)  
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col">{{$project->title}}</div>
                 <div class="col text-end"><a href="{{route('admin.projects.show', $project->id)}}">Esplora</a></div>

@@ -63,7 +63,7 @@
         </div>
         <div class="mb-3">
             <label for="devices" class="form-label">Per quali devices?</label>
-            <input type="date" class="form-control @error('devices') is-invalid @enderror" id="devices" name="devices" value="{{old('devices')}}" ></input>
+            <input type="text" class="form-control @error('devices') is-invalid @enderror" id="devices" name="devices" value="{{old('devices')}}" ></input>
             @error('devices')
             <div class="invalid-feedback">
                 {{$message}}

@@ -36,7 +36,7 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="img" class="form-label">Immagine</label>
+            <label for="img" class="form-label">URL immagine</label>
             <input class="form-control @error('img') is-invalid @enderror" id="img" name="img" value="{{ old('img') ?? $project->img}}"></input>
             @error('img')
             <div class="invalid-feedback">
@@ -45,7 +45,7 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="tech" class="form-label">Prezzo</label>
+            <label for="tech" class="form-label">Tecnologie utilizzate</label>
             <input class="form-control @error('tech') is-invalid @enderror" id="tech" name="tech" value="{{ old('tech') ?? $project->tech}} "  ></input>
              @error('tech')
             <div class="invalid-feedback">
@@ -54,7 +54,7 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="github_url" class="form-label">Serie</label>
+            <label for="github_url" class="form-label">URL Github</label>
             <input class="form-control @error('github_url') is-invalid @enderror" id="github_url" name="github_url" value="{{ old('github_url') ?? $project->github_url}} " ></input>
             @error('github_url')
             <div class="invalid-feedback">
@@ -63,8 +63,8 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="devices" class="form-label">Giorno di pubblicazione</label>
-            <input type="date" class="form-control @error('devices') is-invalid @enderror" id="devices" name="devices" value="{{ old('devices') ?? $project->devices}}"  ></input>
+            <label for="devices" class="form-label">Per quali devices?</label>
+            <input type="text" class="form-control @error('devices') is-invalid @enderror" id="devices" name="devices" value="{{ old('devices') ?? $project->devices}}"  ></input>
             @error('devices')
             <div class="invalid-feedback">
                 {{$message}}
