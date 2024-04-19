@@ -14,7 +14,12 @@
     
     <div class="row justify-content-center py-5">
         <div class="col-6">
-            <p>{{$project->description}}</p>
+            <strong >Tecnologie utilizzate:</strong>
+            <p class="pt-1 ps-4">{{$project->tech}}</p>
+            <strong >Visualizzazione ottimale per:</strong>
+            <p class="pt-1 ps-4">{{$project->devices}}</p>
+            <strong >Descrizione del progetto:</strong>
+            <p class="pt-1 ps-4">{{$project->description}}</p>
             
         </div>
         <div class="col-6 text-center">
