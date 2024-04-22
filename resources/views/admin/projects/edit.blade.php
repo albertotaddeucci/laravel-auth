@@ -13,7 +13,7 @@
 
         </div>
     </div>
-    <form action="{{route('admin.projects.update' , $project->id)}}" method="POST">
+    <form action="{{route('admin.projects.update' , $project->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
     
@@ -36,8 +36,8 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="img" class="form-label">URL immagine</label>
-            <input class="form-control @error('img') is-invalid @enderror" id="img" name="img" value="{{ old('img') ?? $project->img}}"></input>
+            <label for="img" class="form-label">Immagine</label>
+            <input type="file" class="form-control @error('img') is-invalid @enderror" id="img" name="img" value="{{ old('img') ?? $project->img}}"></input>
             @error('img')
             <div class="invalid-feedback">
                 {{$message}}

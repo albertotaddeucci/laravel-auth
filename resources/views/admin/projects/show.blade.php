@@ -4,7 +4,8 @@
 
 <div class="container py-5">
     
-    <div class="row align-items-center rounded-3 " style="background-image: url('{{$project->img}}') ">
+    <div class="row align-items-center rounded-3" style="background-image: url('{{asset('storage/' . $project->img)}}'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+
         <div class="col text-center bg-dark bg-gradient bg-opacity-25 py-5 rounded-2 ">
             <h2 class="text-white">{{$project->title}}</h2>
 

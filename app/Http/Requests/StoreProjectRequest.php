@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => 'required|max:100',
             'description' => 'nullable|max:500',
-            'img' => 'nullable|max:300',
+            'img' => 'file|nullable|max:1024|mimes:jpg,png',
             'tech' => 'required|max:100',
             'github_url' => 'nullable|max:300',
             'devices' => 'nullable|max:100',
@@ -39,7 +39,8 @@ class StoreProjectRequest extends FormRequest
 
             'description.max' => 'Deve avere un massimo di :max caratteri',
 
-            'img.max' => 'Deve avere un massimo di :max caratteri',
+            'img.max' => 'Deve essere di 1024KB o inferiore',
+            'img.mimes' => 'Deve un file di tipo .png o .jpg',
 
             'tech.required' => 'Devi inserire le tecnologie utilizzate',
             'tech.max' => 'Deve avere un massimo di :max caratteri',

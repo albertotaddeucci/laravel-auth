@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -35,6 +36,15 @@ class ProjectController extends Controller
 
         $newProject = new Project();
 
+        if ($request->hasFile('img')) {
+
+            $path = Storage::disk('public')->put('project_images', $request->img);
+
+            $newProject->img = $path;
+        }
+
+
+
         $newProject->fill($request->all());
 
         $newProject->save();
@@ -64,6 +74,13 @@ class ProjectController extends Controller
     public function update(StoreProjectRequest $request, Project $project)
     {
         $request->validated();
+
+        if ($request->hasFile('img')) {
+
+            $path = Storage::disk('public')->put('project_images', $request->img);
+
+            $project->img = $path;
+        }
 
         $project->update($request->all());
 
